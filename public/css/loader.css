@@ -1,0 +1,62 @@
+/* Loader Styles */
+.loader-overlay {
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* Professional Spinner */
+.loader-spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.loader-spinner:before,
+.loader-spinner:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.loader-spinner:before {
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top-color: #22C55E;
+    border-bottom-color: #22C55E;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader-spinner:after {
+    width: 70%;
+    height: 70%;
+    border: 3px solid transparent;
+    border-left-color: #22C55E;
+    border-right-color: #22C55E;
+    top: 15%;
+    left: 15%;
+    animation: spin 1s linear infinite reverse;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,82 @@
+/* Message Popup Styles */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToTop {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.message-popup {
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+    z-index: 10000;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 6px 10px rgba(0, 0, 0, 0.22);
+    min-width: 320px;
+    max-width: 450px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.message-popup.show {
+    animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.message-popup.hide {
+    animation: slideOutToTop 0.5s ease-in forwards;
+}
+
+.message-popup.success {
+    background-color: #43a047;
+}
+
+.message-popup.error {
+    background-color: #e53935;
+}
+
+.message-popup.normal {
+    background-color: #1e88e5;
+}
+
+/* Add icons to message types */
+.message-popup::before {
+    margin-right: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message-popup.success::before {
+    content: "";
+}
+
+.message-popup.error::before {
+    content: "";
+}
+
+.message-popup.normal::before {
+    content: "";
+}
+
+
